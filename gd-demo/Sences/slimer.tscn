@@ -1,0 +1,84 @@
+[gd_scene load_steps=13 format=3 uid="uid://do238q7i56uew"]
+
+[ext_resource type="Texture2D" uid="uid://bv08wjbe1fyuy" path="res://AssetBundle/Sprites/Slimer.png" id="1_mcl2k"]
+[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_vxp41"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sniyw"]
+atlas = ExtResource("1_mcl2k")
+region = Rect2(0, 0, 41, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0ku6"]
+atlas = ExtResource("1_mcl2k")
+region = Rect2(41, 0, 41, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5n76"]
+atlas = ExtResource("1_mcl2k")
+region = Rect2(82, 0, 41, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vyov3"]
+atlas = ExtResource("1_mcl2k")
+region = Rect2(123, 0, 41, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fe1sd"]
+atlas = ExtResource("1_mcl2k")
+region = Rect2(164, 0, 41, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6nuwl"]
+atlas = ExtResource("1_mcl2k")
+region = Rect2(205, 0, 41, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8muw"]
+atlas = ExtResource("1_mcl2k")
+region = Rect2(246, 0, 41, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qiy66"]
+atlas = ExtResource("1_mcl2k")
+region = Rect2(287, 0, 41, 38)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n7jg3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sniyw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d0ku6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5n76")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vyov3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fe1sd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6nuwl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8muw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qiy66")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i2l5g"]
+radius = 11.0
+
+[node name="Slimer" type="Area2D"]
+script = ExtResource("1_vxp41")
+slimer_speed = -10.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_n7jg3")
+autoplay = "default"
+frame_progress = 0.993279
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 9)
+shape = SubResource("CircleShape2D_i2l5g")
