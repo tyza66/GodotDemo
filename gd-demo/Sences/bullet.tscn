@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ls2pp"]
 size = Vector2(6, 3)
 
-[node name="Bullet" type="Area2D"]
+[node name="Bullet" type="Area2D" groups=["bullet"]]
 script = ExtResource("1_crjf8")
 bullet_speed = 300.0
 
