@@ -8,10 +8,11 @@
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rh0hl"]
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" node_paths=PackedStringArray("spawn_timer")]
 y_sort_enabled = true
 script = ExtResource("1_i2dgr")
 slime_scene = ExtResource("3_wkek2")
+spawn_timer = NodePath("Timer")
 
 [node name="Background 1" type="Sprite2D" parent="."]
 position = Vector2(-120, -1)
