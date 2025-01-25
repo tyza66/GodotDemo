@@ -12,6 +12,9 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if not is_dead:
 		position += Vector2(slimer_speed,0) *delta # delta是每一帧有多少秒
+		
+	if position.x < -267:
+		queue_free()
 
 
 func _on_body_entered(body: Node2D) -> void:
@@ -26,6 +29,8 @@ func _on_area_entered(area: Area2D) -> void:
 		$AnimatedSprite2D.play("death") # 这样直接将属性拖进来的是按照名称寻找的,很脆弱
 		is_dead = true 
 		area.queue_free()
+		# get_tree().current_scene能获得当前场景的根节点 同时相当于获得它的脚本
+		get_tree().current_scene.score += 1
 		
 		await get_tree().create_timer(0.6).timeout
 		queue_free() # 销毁史莱姆节点
