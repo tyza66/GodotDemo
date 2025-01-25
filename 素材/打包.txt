@@ -7,3 +7,7 @@
 
 
 web导出直接默认就行 记得文件名命名为index.html
+
+上传 itch.io 记得勾选该文件将在浏览器中运行(上传的是zip压缩包) 
+可选全屏按钮
+为了正常运行再勾上SharedArrayBuffer
