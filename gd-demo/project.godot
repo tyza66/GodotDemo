@@ -15,6 +15,10 @@ run/main_scene="res://Sences/game.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Bgm="*res://Sences/bgm.tscn"
+
 [input]
 
 left={

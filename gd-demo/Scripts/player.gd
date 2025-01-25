@@ -18,7 +18,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if velocity == Vector2.ZERO or is_game_over:
 		$RunningSound.stop()
-	elif not $RunningSound.playing: #如果没有在播放的的话
+	elif not $RunningSound.playing: #如果没有在播放的的话 如果不这样写,每次速度为0的时候就会停止播放了
 		$RunningSound.play()
 	# 之后的其他条件就不用再判断了
 

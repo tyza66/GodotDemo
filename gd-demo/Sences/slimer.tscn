@@ -1,8 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://do238q7i56uew"]
+[gd_scene load_steps=22 format=3 uid="uid://do238q7i56uew"]
 
 [ext_resource type="Texture2D" uid="uid://bv08wjbe1fyuy" path="res://AssetBundle/Sprites/Slimer.png" id="1_mcl2k"]
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_vxp41"]
 [ext_resource type="Texture2D" uid="uid://cm6tqwk10okvh" path="res://AssetBundle/Sprites/SlimerDeath.png" id="2_7h0yt"]
+[ext_resource type="AudioStream" uid="uid://cx65s8y0eqckr" path="res://AssetBundle/Audio/EnemyDeath.mp3" id="4_vn8yh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_54fsn"]
 atlas = ExtResource("2_7h0yt")
@@ -139,6 +140,9 @@ frame_progress = 1.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 9)
 shape = SubResource("CircleShape2D_i2l5g")
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_vn8yh")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -18,7 +18,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body is CharacterBody2D:
+	if body is CharacterBody2D and not is_dead:
 		print("敌人触碰到玩家")
 		body.game_over()
 
@@ -31,6 +31,8 @@ func _on_area_entered(area: Area2D) -> void:
 		area.queue_free()
 		# get_tree().current_scene能获得当前场景的根节点 同时相当于获得它的脚本
 		get_tree().current_scene.score += 1
+		
+		$DeathSound.play()
 		
 		await get_tree().create_timer(0.6).timeout
 		queue_free() # 销毁史莱姆节点
