@@ -77,8 +77,10 @@ slimer_speed = -10.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_n7jg3")
 autoplay = "default"
-frame_progress = 0.993279
+frame_progress = 0.485052
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 9)
 shape = SubResource("CircleShape2D_i2l5g")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

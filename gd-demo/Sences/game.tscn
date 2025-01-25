@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bu1oiiq5jvdph"]
+[gd_scene load_steps=6 format=3 uid="uid://bu1oiiq5jvdph"]
 
 [ext_resource type="Texture2D" uid="uid://iixinyoba301" path="res://AssetBundle/Sprites/ForestBackground.png" id="1_wu824"]
 [ext_resource type="PackedScene" uid="uid://d2ej7rjpfo4ip" path="res://Sences/player.tscn" id="2_b4ypj"]
+[ext_resource type="PackedScene" uid="uid://dggi4ivwft7pn" path="res://Sences/bullet.tscn" id="3_gdi01"]
 [ext_resource type="PackedScene" uid="uid://do238q7i56uew" path="res://Sences/slimer.tscn" id="3_wkek2"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rh0hl"]
@@ -25,6 +26,7 @@ metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_b4ypj")]
 position = Vector2(-162, 83)
+bullet_scence = ExtResource("3_gdi01")
 
 [node name="Boundary" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
