@@ -25,6 +25,7 @@ func _on_area_entered(area: Area2D) -> void:
 		print("史莱姆中弹了")
 		$AnimatedSprite2D.play("death") # 这样直接将属性拖进来的是按照名称寻找的,很脆弱
 		is_dead = true 
+		area.queue_free()
 		
 		await get_tree().create_timer(0.6).timeout
 		queue_free() # 销毁史莱姆节点

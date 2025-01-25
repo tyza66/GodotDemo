@@ -11,7 +11,6 @@
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_i2dgr")
-slime_scene = ExtResource("3_wkek2")
 
 [node name="Background 1" type="Sprite2D" parent="."]
 position = Vector2(-120, -1)
