@@ -1,13 +1,18 @@
 extends CharacterBody2D
 
+# 变量声明
+@export var move_speed : float = 50
 
 # Called when the node enters the scene tree for the first time.
 # _ready函数中的代码会在游戏开始的时候运行
 func _ready() -> void:
 	print("Hello,World!")
+	# velocity = Vector2(50,0) #设定玩家初始速度 这俩东西来自CharacterBody2D类
 	# pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+# _process函数会在游戏的每一帧都执行一次
 func _process(delta: float) -> void:
-	pass
+	velocity = Input.get_vector("left","right","up","down") * move_speed
+	move_and_slide()
