@@ -45,8 +45,9 @@ func game_over():
 		$GameOverSound.play()
 		
 		# 等待计时器到期的信号 这个语句会暂停代码的执行，直到计时器触发timeout信号
-		await get_tree().create_timer(3).timeout # await是等待 
-		get_tree().reload_current_scene()
+		#await get_tree().create_timer(3).timeout # await是等待  注意这种Time原理是挂在在主场景树的根节点上 重置时会闪一下
+		#get_tree().reload_current_scene()
+		$RestartTimer.start()
 	
 
 
@@ -60,3 +61,8 @@ func _on_fire() -> void:
 	var bullet_node = bullet_scence.instantiate()
 	bullet_node.position = position + Vector2(6,6) # 将玩家当前位置赋给子弹
 	get_tree().current_scene.add_child(bullet_node)
+
+
+
+func _reload_scene() -> void:
+	get_tree().reload_current_scene()

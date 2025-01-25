@@ -1,0 +1,7 @@
+拉伸模式
+一般没有使用像素风的游戏使用Canvas Items
+像素风的canvas item 和viewport都可以选择
+
+区别:
+viewport会让物体强行吸附到每一个像素上(包括旋转的时候)
+Canvas Items不会进行强行吸附
